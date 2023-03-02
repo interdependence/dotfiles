@@ -48,9 +48,6 @@ colors:
     white: "0xc8ccd4"
 
 window:
-  padding:
-    x: 5
-    y: 5
   decorations: "none"
 
 key_bindings:
