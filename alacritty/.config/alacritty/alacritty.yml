@@ -28,24 +28,24 @@ colors:
     cursor: "0xabb2bf"
 
   normal:
-    black:   "0x282c34"
-    red:     "0xe06c75"
-    green:   "0x98c379"
-    yellow:  "0xe5c07b"
-    blue:    "0x61afef"
+    black: "0x282c34"
+    red: "0xe06c75"
+    green: "0x98c379"
+    yellow: "0xe5c07b"
+    blue: "0x61afef"
     magenta: "0xc678dd"
-    cyan:    "0x56b6c2"
-    white:   "0xabb2bf"
+    cyan: "0x56b6c2"
+    white: "0xabb2bf"
 
   bright:
-    black:   "0x545862"
-    red:     "0xd19a66"
-    green:   "0x353b45"
-    yellow:  "0x3e4451"
-    blue:    "0x565c64"
+    black: "0x545862"
+    red: "0xd19a66"
+    green: "0x353b45"
+    yellow: "0x3e4451"
+    blue: "0x565c64"
     magenta: "0xb6bdca"
-    cyan:    "0xbe5046"
-    white:   "0xc8ccd4"
+    cyan: "0xbe5046"
+    white: "0xc8ccd4"
 
 window:
   padding:
@@ -54,4 +54,4 @@ window:
   decorations: "none"
 
 key_bindings:
-  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
