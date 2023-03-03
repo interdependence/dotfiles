@@ -48,6 +48,9 @@ colors:
     white: "0xc8ccd4"
 
 window:
+  dimensions:
+    columns: 80
+    lines: 20 
   decorations: "none"
 
 key_bindings:
