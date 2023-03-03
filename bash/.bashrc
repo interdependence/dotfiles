@@ -12,10 +12,14 @@ then
 fi
 export PATH
 
+alias te="toolbox enter"
+alias tb="toolbox enter toolbox-base"
+
 # Toolbox specific
 if [[ "$HOSTNAME" = "toolbox" ]]; then
+  if [ -z "$TMUX" ]; then tmux; fi
+
   alias ls="lsd"
-  alias te="toolbox enter"
   alias gs="git status"
   alias venv-activate=". venv/bin/activate"
   
