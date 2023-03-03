@@ -12,8 +12,16 @@ then
 fi
 export PATH
 
+if [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
+  . /usr/share/git-core/contrib/completion/git-prompt.sh
+  export PS1="\[\033[32m\]\w\[\033[33m\]\$(GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1)\[\033[00m\] $ "
+else
+  export PS1="\[\033[32m\]\w\[\033[33m\]\[\033[00m\] $ "
+fi
+
 alias te="toolbox enter"
 alias tb="toolbox enter toolbox-base"
+alias td="toolbox enter toolbox-devops"
 
 # Toolbox specific
 if [[ "$HOSTNAME" = "toolbox" ]]; then
@@ -24,5 +32,4 @@ if [[ "$HOSTNAME" = "toolbox" ]]; then
   alias venv-activate=". venv/bin/activate"
   
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/home-config"
-  export SOPS_AGE_KEY_FILE="$HOME/.config/sops/age/keys.txt"
 fi
