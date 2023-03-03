@@ -18,7 +18,7 @@ alias td="toolbox enter toolbox-devops"
 
 # Toolbox specific
 if [[ "$HOSTNAME" = "toolbox" ]]; then
-	TOOLBOX_NAME=$(cat /run/.containerenv | grep "name=" | sed -e 's/^name="\(.*\)"$/\1/')
+	export TOOLBOX_NAME=$(cat /run/.containerenv | grep "name=" | sed -e 's/^name="\(.*\)"$/\1/')
 
   if [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
     . /usr/share/git-core/contrib/completion/git-prompt.sh
