@@ -181,6 +181,8 @@ require('lazy').setup({
     },
   },
 
+  { 'NvChad/nvim-colorizer.lua', opts = {} },
+
   {
     'iamcco/markdown-preview.nvim',
     build = function() vim.fn["mkdp#util#install"]() end,
