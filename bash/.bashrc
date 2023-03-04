@@ -12,19 +12,17 @@ then
 fi
 export PATH
 
-alias te="toolbox enter"
-alias tb="toolbox enter toolbox-base"
-alias td="toolbox enter toolbox-devops"
+function tb { toolbox enter "toolbox-$1"; }
 
 # Toolbox specific
 if [[ "$HOSTNAME" = "toolbox" ]]; then
-	export TOOLBOX_NAME=$(cat /run/.containerenv | grep "name=" | sed -e 's/^name="\(.*\)"$/\1/')
+  export TOOLBOX_NAME=$(cat /run/.containerenv | grep "name=" | sed -e 's/^name="toolbox-\(.*\)"$/\1/')
 
   if [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
     . /usr/share/git-core/contrib/completion/git-prompt.sh
-    export PS1="$TOOLBOX_NAME \[\033[32m\]\w\[\033[33m\]\$(GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1)\[\033[00m\] $ "
+    export PS1="[$TOOLBOX_NAME] \[\033[32m\]\w\[\033[33m\]\$(GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1)\[\033[00m\] $ "
   else
-    export PS1="$TOOLBOX_NAME \[\033[32m\]\w\[\033[33m\]\[\033[00m\] $ "
+    export PS1="[$TOOLBOX_NAME] \[\033[32m\]\w\[\033[33m\]\[\033[00m\] $ "
   fi
 
   if [ -z "$TMUX" ]; then tmux; fi
