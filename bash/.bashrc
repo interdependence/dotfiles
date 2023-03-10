@@ -17,7 +17,7 @@ function tb { toolbox enter "toolbox-$1"; }
 function installed { command -v "$1" &> /dev/null; }
 
 # Toolbox specific
-if [ "$HOSTNAME" = "toolbox" ]; then
+if [ -f /run/.toolboxenv ]; then
   # Environment variables
   export TOOLBOX_NAME=$(cat /run/.containerenv | grep "name=" | sed -e 's/^name="toolbox-\(.*\)"$/\1/')
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/home-config"
