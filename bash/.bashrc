@@ -21,6 +21,7 @@ if [ -f /run/.toolboxenv ]; then
   # Environment variables
   export TOOLBOX_NAME=$(cat /run/.containerenv | grep "name=" | sed -e 's/^name="toolbox-\(.*\)"$/\1/')
   export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/home-config"
+  export PROMPT_DIRTRIM=3
 
   # PS1 with git if present
   if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
